@@ -3,9 +3,12 @@ from flask import Flask,render_template,request
 app=Flask(__name__)
 
 @app.route('/')
-@app.route('/product')
 def index():
     return render_template('index.html')
+
+@app.route('/product')
+def product():
+    return render_template('product.html')
 
 @app.route('/about')
 def about():

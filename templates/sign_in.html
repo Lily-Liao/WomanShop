@@ -1,55 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset='utf-8'/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Woman Shop</title>
-        <style type="text/css">
-            img{
-                margin: 10px;
-            }
-            .item{
-                display: inline-block;vertical-align: top;font-size: 28px;margin-right: 60px;font-weight: bold;color: rgb(243, 244, 245);
-                text-align: center;
-            }
-            .item:hover{
-                color: rgb(2, 60, 117);
-            }
-            form{
-                line-height: 2em;
-            }
-            form>input{
-                padding: 5px 10px;border: 1px solid;border-radius: 5%;
-            }
-            
-        </style>
-        
-    </head>
-
-    <body style="margin: 0px;background-color: rgba(250, 249, 243, 0.8);background-position: center;background-size: cover;">
-        <div class="head" style="background: linear-gradient(135deg, rgb(221, 219, 219) 0%,rgb(158, 156, 156) 39%,rgb(99, 97, 98) 69%,rgb(43, 39, 40) 100%);
-        text-align: center;position: fixed;width: 100%">
-            <img src="static/logo.png/" id="logo" width='300' height="80" alt='Logo Picture' title="index" />
-            
-            <div style="width: 100% autp;margin-left: auto;margin-right: auto;padding: 5px;">
-                <div class="item" onclick="javascript:location.href='/product'">Product</div>
-                <div class="item" onclick="javascript:location.href='/about'">About</div>
-                <div class="item" onclick="javascript:location.href='/sign_in'">Sign in</div>
-            </div>             
-        </div>
-        <div style="height: 150px;"></div>
-        <main style="width: 50%;margin-left: auto;margin-right: auto;border: solid black;margin-top: 50px;">
-            <h1 style="text-align: center;">Sign in</h1>
-            <form onsubmit="alert('表單送出');" style="text-align: center;font-size: x-large;">
-                帳號：<input type="text" placeholder="請輸入6~12位數字或英文" required pattern="[\w]{6,12}"/>
-               <br/>
-                密碼：<input type="password" placeholder="請輸入8~16位數字或英文" required required pattern="[\w]{8,16}"/>
-                <br/>
-                信箱：<input type="email" required pattern="\w+@\w+\.\w+"/>
-                <br/><br/>
-                <input type="submit" value="提交"/>
-            </form>
-        </main>  
-    </body>
-
-</html>
+<main style="width: 50%;margin-left: auto;margin-right: auto;border: solid black;margin-top: 50px;">
+    <h1 style="text-align: center;">Sign in</h1>
+    <form onsubmit="alert('表單送出');" style="text-align: center;font-size: x-large;">
+        帳號：<input type="text" placeholder="請輸入6~12位數字或英文" required pattern="[\w]{6,12}"/>
+        <br/>
+        密碼：<input type="password" placeholder="請輸入8~16位數字或英文" required required pattern="[\w]{8,16}"/>
+        <br/>
+        信箱：<input type="email" required pattern="\w+@\w+\.\w+"/>
+        <br/><br/>
+        <input type="submit" value="提交"/>
+    </form>
+</main>  
+ 

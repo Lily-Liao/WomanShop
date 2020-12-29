@@ -4,6 +4,7 @@
         <meta charset='utf-8'/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Woman Shop</title>
+        <link rel="stylesheet" type="text/css" href="static/style.css">
         <style type="text/css">
             img{
                 margin: 10px;
@@ -15,30 +16,30 @@
             .item:hover{
                 color: rgb(2, 60, 117);
             }
-            .list{
-                font-size: 28px;text-align: center;color: rgb(15, 1, 4);
-            }
-            main{
-                display: flex;flex-wrap: wrap;
-                justify-content: center;
-
-            }
-            main>.content{
-                flex: none;color:rgb(244, 246, 248);margin-left: 20px;margin-right: 20px;height: 360px;;
-            }
-
-            @media (max-width: 1200px) {
-                main>.content{
-                    width:45%
-                }
-            }
-            @media (max-width: 500px) {
-                main>.content{
-                    width:90%
-                }
-            }
+            
         </style>
-        
+        <script type="text/javascript">
+            function toggleMenu(){
+               var desc = document.getElementById("desc")
+               var context = document.getElementById("context")
+               if (desc.style.display == "none"){
+                desc.style.display="block"
+                context.innerHTML="(內容已打開)"
+               }else{
+                   desc.style.display="none"
+                   context.innerHTML="(內容已關閉)"
+               }
+            }
+            function getData(page){
+                var req = new XMLHttpRequest();
+                req.open('get','http://127.0.0.1:5000/'+page);
+                req.onload=function(){
+                    var detail = document.getElementById('detail');
+                    detail.innerHTML = this.responseText;
+                }
+                req.send();
+            }
+        </script>
     </head>
 
     <body style="margin: 0px;background-color: rgba(250, 249, 243, 0.8);background-position: center;background-size: cover;">
@@ -47,51 +48,16 @@
             <img src="static/logo.png/" id="logo" width='300' height="80" alt='Logo Picture' title="index" />
             
             <div style="width: 100% autp;margin-left: auto;margin-right: auto;padding: 5px;">
-                <div class="item" onclick="javascript:location.href='/product'">Product</div>
-                <div class="item" onclick="javascript:location.href='/about'">About</div>
-                <div class="item" onclick="javascript:location.href='/sign_in'">Sign in</div>
+                <div class="item" onclick="getData('product');">Product</div>
+                <!--onclick="javascript:location.href='/product'"-->
+                <div class="item" onclick="getData('about');">About</div>
+                <div class="item" onclick="getData('sign_in');">Sign in</div>
             </div>             
         </div>
         <div style="height: 150px;"></div>
-            <main >
+            <div id="detail">
                 
-                    <div class="content" >
-                        <img src="static/eyeshadow-1.jpg" width='270' height="270" alt='眼影盤'title='眼影盤'/>
-                        <div class="list">(特價中)眼影盤</div>    
-                    </div>
-                    <div class="content" >
-                        <img src="static/eyeshadow-2.jpg" width='270' height="270" alt='眼影盤'title='眼影盤'/>
-                        <div class="list">(新貨)眼影盤</div> 
-                    </div>
-                    <div class="content" >
-                        <img src="static/eyeshadow-3.jpg" width='270' height="270" alt='眼影盤'title='眼影盤'/>
-                        <div class="list">(出清價)眼影盤</div>
-                    </div>
-                    <div class="content" >
-                        <img src="static/brush-1.jpg" width='270' height="270" alt='化妝刷具'title='化妝刷具'/>
-                        <div class="list">化妝刷具</div>
-                    </div>
-                
-                
-                    <div class="content" >
-                        <img src="static/lipstick-1.jpg" width='270' height="270" alt='口紅'title='口紅'/>
-                        <div class="list">(種類眾多)口紅</div>    
-                    </div>
-                    <div class="content" >
-                        <img src="static/lipstick-2.jpg" width='270' height="270" alt='口紅'title='口紅'/>
-                        <div class="list">(新到貨)口紅</div> 
-                    </div>
-                    <div class="content" >
-                        <img src="static/glitter-powder-1.jpg" width='270' height="270" alt='散粉'title='散粉'/>
-                        <div class="list">散粉定妝</div>
-                    </div>
-                    <div class="content" >
-                        <img src="static/perfume.jpg" width='270' height="270" alt='清新香水'title='清新香水'/>
-                        <div class="list">清新香水</div>
-                    </div>
-                
-            </main>
-        
+            </div>
     </body>
 
 </html>
